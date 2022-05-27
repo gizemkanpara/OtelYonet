@@ -1,0 +1,72 @@
+﻿@model IEnumerable<otelyonet.Models.Musteri>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MusteriTC)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MusteriAdi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MusteriSoyadi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MusteriTel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MusteriAdresi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cinsiyet)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MusteriTip)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MusteriTC)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MusteriAdi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MusteriSoyadi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MusteriTel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MusteriAdresi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cinsiyet.CinsiyetTuru)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MusteriTip.MusteriTipleri)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.MusteriID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.MusteriID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.MusteriID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,55 @@
+﻿@model IEnumerable<otelyonet.Models.Oda>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+
+            <th>
+                @Html.DisplayNameFor(model => model.OdaID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OdaAdı)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KatNO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.YatakSayısı)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.OdaID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OdaAdı)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KatNO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.YatakSayısı)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.OdaID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.OdaID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.OdaID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

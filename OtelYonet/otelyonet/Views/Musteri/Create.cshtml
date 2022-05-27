@@ -1,0 +1,87 @@
+﻿@model otelyonet.Models.Musteri
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<section class="content pt-3">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- left column -->
+            <div class="col-md-12">
+                <!-- jquery validation -->
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">MÜŞTERİ EKLE</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <!-- form start -->
+
+
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <form asp-action="Create">
+
+                                <div class="card-body">
+                                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                    <div class="form-group">
+                                        <label asp-for="MusteriTC" class="control-label"></label>
+                                        <input asp-for="MusteriTC" class="form-control" />
+                                        <span asp-validation-for="MusteriTC" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="MusteriAdi" class="control-label"></label>
+                                        <input asp-for="MusteriAdi" class="form-control" />
+                                        <span asp-validation-for="MusteriAdi" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="MusteriSoyadi" class="control-label"></label>
+                                        <input asp-for="MusteriSoyadi" class="form-control" />
+                                        <span asp-validation-for="MusteriSoyadi" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="MusteriTel" class="control-label"></label>
+                                        <input asp-for="MusteriTel" class="form-control" />
+                                        <span asp-validation-for="MusteriTel" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="MusteriAdresi" class="control-label"></label>
+                                        <input asp-for="MusteriAdresi" class="form-control" />
+                                        <span asp-validation-for="MusteriAdresi" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="CinsiyetID" class="control-label"></label>
+                                        <select asp-for="CinsiyetID" class="form-control" asp-items="ViewBag.CinsiyetID"><option selected value="0">Cinsiyet Seçin</option></select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="MusteriTipID" class="control-label"></label>
+                                        <select asp-for="MusteriTipID" class="form-control" asp-items="ViewBag.MusteriTipID"><option selected value="0">Müşteri Tipi Seçin</option></select>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="submit" value="Create" class="btn btn-primary" />
+                                    </div>
+
+                                    <div>
+                                        <a asp-action="Index">Listeye Dön</a>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+
+                </div>
+                <!-- /.card -->
+            </div>
+            <!--/.col (left) -->
+            <!-- right column -->
+            <div class="col-md-6">
+
+            </div>
+            <!--/.col (right) -->
+        </div>
+        <!-- /.row -->
+    </div><!-- /.container-fluid -->
+</section>

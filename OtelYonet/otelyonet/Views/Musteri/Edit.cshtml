@@ -1,0 +1,62 @@
+﻿@model otelyonet.Models.Musteri
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>Musteri</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="MusteriID" />
+            <div class="form-group">
+                <label asp-for="MusteriTC" class="control-label"></label>
+                <input asp-for="MusteriTC" class="form-control" />
+                <span asp-validation-for="MusteriTC" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MusteriAdi" class="control-label"></label>
+                <input asp-for="MusteriAdi" class="form-control" />
+                <span asp-validation-for="MusteriAdi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MusteriSoyadi" class="control-label"></label>
+                <input asp-for="MusteriSoyadi" class="form-control" />
+                <span asp-validation-for="MusteriSoyadi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MusteriTel" class="control-label"></label>
+                <input asp-for="MusteriTel" class="form-control" />
+                <span asp-validation-for="MusteriTel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MusteriAdresi" class="control-label"></label>
+                <input asp-for="MusteriAdresi" class="form-control" />
+                <span asp-validation-for="MusteriAdresi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CinsiyetID" class="control-label"></label>
+                <select asp-for="CinsiyetID" class="form-control" asp-items="ViewBag.CinsiyetID"></select>
+                <span asp-validation-for="CinsiyetID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MusteriTipID" class="control-label"></label>
+                <select asp-for="MusteriTipID" class="form-control" asp-items="ViewBag.MusteriTipID"></select>
+                <span asp-validation-for="MusteriTipID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
